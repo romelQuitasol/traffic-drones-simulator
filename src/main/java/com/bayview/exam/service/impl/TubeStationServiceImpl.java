@@ -23,7 +23,7 @@ public class TubeStationServiceImpl implements TubeStationService {
   public List<TubeStation> getTubeStations() {
     try {
       File file = CSVUtil.getFile(TUBE_STATION_FILE_NAME);
-      if(file.exists() && file.length() > 0){
+      if (file.exists() && file.length() > 0) {
         List<TubeStation> tubeStations = CSVUtil
             .parseCSVToBean(file.getPath(), TubeStation.class).parse();
         return tubeStations;

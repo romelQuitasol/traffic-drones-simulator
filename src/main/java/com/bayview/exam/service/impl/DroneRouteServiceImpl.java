@@ -24,7 +24,7 @@ public class DroneRouteServiceImpl implements DroneRouteService {
     List<Route> droneRoutes = new ArrayList<>();
     File[] files = CSVUtil.getFiles(DRONE_FOLDER_PATH);
     for (File file : files) {
-      if(file.length() > 0){
+      if (file.length() > 0) {
         List<Route> tempRoutes = CSVUtil.parseCSVToBean(file.getPath(), Route.class)
             .parse();
         droneRoutes.addAll(tempRoutes);
